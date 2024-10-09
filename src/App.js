@@ -16,7 +16,7 @@ const HeartAnimation = () => {
     return (
         <div className="container">
             <div className="heart"></div>
-            {showText && <div className="love-text">Je t'aime Ionisoa🥺</div>}
+            {showText && <div className="love-text">Tu me manque Felana keliko 🥺</div>}
         </div>
     );
 };
