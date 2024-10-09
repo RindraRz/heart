@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+// HeartAnimation.js
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const HeartAnimation = () => {
+    const [showText, setShowText] = useState(false);
 
-export default App;
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowText(true);
+        }, 2000); // Délai de 2 secondes avant d'afficher le texte
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    return (
+        <div className="container">
+            <div className="heart"></div>
+            {showText && <div className="love-text">Je t'aime Ionisoa</div>}
+        </div>
+    );
+};
+
+export default HeartAnimation;
