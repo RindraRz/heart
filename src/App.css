@@ -1,64 +1,15 @@
 /* HeartAnimation.css */
+
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100vh; /* Centre verticalement */
+  align-items: center;
+  height: 100vh; /* Prend toute la hauteur de l'écran */
+  background-image: url('../public/background.jpg'); /* Ajoutez votre image d'arrière-plan ici */
+  background-size: cover; /* S'assure que l'image couvre tout l'écran */
+  background-position: center; /* Centre l'image d'arrière-plan */
+  color: white; /* Change la couleur du texte si nécessaire */
+  text-align: center; /* Centre le texte */
 }
 
-.heart {
-  position: relative;
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  background-color: #e63946;
-  animation: beat 1s infinite;
-}
-
-.heart:before,
-.heart:after {
-  content: '';
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: #e63946;
-  border-radius: 50%;
-}
-
-.heart:before {
-  top: -50px;
-  left: 0;
-}
-
-.heart:after {
-  left: 50px;
-  top: 0;
-}
-
-@keyframes beat {
-  0%, 20%, 50%, 80%, 100% {
-      transform: scale(1);
-  }
-  10% {
-      transform: scale(1.2);
-  }
-  30% {
-      transform: scale(1.1);
-  }
-}
-
-.love-text {
-  margin-top: 20px; /* Espace entre le cœur et le texte */
-  font-size: 24px; /* Taille de la police */
-  color: #e63946; /* Couleur du texte */
-  opacity: 0; /* Démarre invisible */
-  animation: fadeIn 1s forwards; /* Animation pour l'apparition */
-  animation-delay: 2s; /* Délai d'animation pour correspondre au timer */
-}
-
-@keyframes fadeIn {
-  to {
-      opacity: 1; /* Fait apparaître le texte */
-  }
-}
